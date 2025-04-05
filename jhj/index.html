@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J Aviation Training - Professional Aviation Training Services</title>
+    <meta name="description" content="J Aviation Training offers specialized aviation training programs for airlines and airports, including SMS, AVSEC, and emergency response training.">
+    <meta name="keywords" content="aviation training, SMS training, AVSEC training, airport operations, aviation safety, emergency response">
+
+    <!-- Schema.org markup for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "J Aviation Training",
+      "image": "https://www.javiationtraining.com/logo.png",
+      "url": "https://www.javiationtraining.com",
+      "telephone": "+5511947911155",
+      "email": "javiationtraining@gmail.com",
+      "description": "Professional aviation training for airlines and airports, specializing in SMS, AVSEC, and emergency response programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Canada"
+      },
+      "sameAs": [
+        "https://www.instagram.com/javiationtraining",
+        "https://www.linkedin.com/company/j-aviation-training"
+      ],
+      "knowsAbout": [
+        "Aviation Safety Management Systems",
+        "Aviation Security",
+        "Airport Operations",
+        "Emergency Response Training"
+      ]
+    }
+    </script>
+
+    <!-- CSS Styles -->
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Background Video - Further Optimized */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0.6;
+            object-fit: cover;
+            /* Reduced initial quality for faster load */
+            preload: "none";
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+        }
+
+        /* Navigation Bar - Added Mobile Menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8); /* More opaque for better readability */
+            backdrop-filter: blur(5px);
+            padding: 15px 40px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .navbar nav {
+            display: flex;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .navbar nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.2s forwards;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: fadeInUp 1.4s forwards;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* About Section with Image */
+        #about {
+            background-color: rgba(10, 10, 10, 0.8);
+            padding: 100px 40px;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-align: left;
+            position: relative;
+        }
+
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            bottom: -15px;
+            left: 0;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Logo Gallery */
+        #logo-gallery {
+            background-color: rgba(10, 10, 10, 0.8);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            width: 180px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-logo {
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(100%) brightness(1.8) contrast(1.2);
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover .partner-logo {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Programs */
+        #programs {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .programs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        /* Program Cards with Images */
+        .program-card {
+            background-color: rgba(30, 30, 30, 0.7);
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .program-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 20px 30px;
+        }
+
+        .program-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .program-card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .learn-more {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .learn-more:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .learn-more:hover:after {
+            width: 100%;
+        }
+
+        /* Customers Section */
+        #customers {
+            background-color: rgba(10, 10, 10, 0.7);
+        }
+
+        .customers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .customer-card {
+            width: 280px;
+            height: 280px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .customer-card:hover {
+            transform: scale(1.05);
+        }
+
+        .customer-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .customer-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .customer-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 20px;
+            transition: height 0.3s ease;
+        }
+
+        .customer-card:hover .customer-overlay {
+            height: 50%;
+        }
+
+        .customer-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Why Invest Section */
+        #why-invest {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 100px 40px;
+        }
+
+        .tabs-container {
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 30px;
+        }
+
+        .tab-button {
+            background-color: rgba(30, 30, 30, 0.7);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            flex: 1;
+            min-width: 230px;
+            max-width: 300px;
+        }
+
+        .tab-button:hover,
+        .tab-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .tab-content {
+            background-color: rgba(30, 30, 30, 0.7);
+            padding: 30px;
+            border-radius: 0 5px 5px 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            min-height: 250px;
+            display: none;
+            animation: fadeIn 0.5s forwards;
+            text-align: left;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            color: #007bff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .tab-content p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Image gallery */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery-image {
+            width: 48%;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Our Difference and Platform Section */
+        #platform {
+            background-color: rgba(10, 10, 10, 0.8);
+            padding: 100px 40px;
+        }
+
+        .platform-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .platform-content {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .platform-content h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .platform-content h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .platform-content p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .platform-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .platform-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .platform-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: rgba(10, 10, 10, 0.9);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(50, 50, 50, 0.8);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .social-icon:hover {
+            background-color: #007bff;
+            transform: scale(1.1);
+        }
+
+        .founder {
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        .founder a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .founder a:hover {
+            text-decoration: underline;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Media Queries - Enhanced for better mobile experience */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            .about-text h2 {
+                text-align: center;
+            }
+            .about-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .gallery-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.95);
+                transition: 0.5s;
+                overflow-y: auto;
+            }
+
+            .navbar nav.active {
+                left: 0;
+            }
+
+            .navbar nav ul {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .navbar nav ul li {
+                margin: 20px 0;
+            }
+
+            .navbar nav ul li a {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section h2 {
+                font-size: 2.5rem;
+            }
+
+            .tab-button {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            .program-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Video Container - Optimized for smoother playback -->
+    <div class="video-container">
+        <div class="overlay"></div>
+        <video class="video-background" autoplay muted loop playsinline preload="none">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Navigation Bar with Mobile Menu -->
+    <header class="navbar">
+        <img src="logo.png" alt="J Aviation Logo" class="logo">
+        <div class="menu-toggle" id="mobileMenu">☰</div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="#platform">Our Difference</a></li>
+                <li><a href="#why-invest">Training - ICAO/EASA/ANAC</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>J Aviation Training</h1>
+        <p>Your partner in professional aviation training, dedicated to excellence and safety from ground to skies.</p>
+        <a href="#programs" class="cta-button">Explore Our Programs</a>
+    </section>
+
+    <!-- About Section with Image -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>At J Aviation Training, we specialize in tailored operation programs that meet the needs of your
+                    business and ensure the highest level of safety and efficiency. With years of experience in the
+                    aviation industry, our team of experts provides comprehensive training solutions for aviation
+                    professionals worldwide.</p>
+                <p>Our mission is to elevate aviation safety standards through innovative training methods and
+                    customized programs designed for airlines, airports, and individual professionals. We focus on
+                    practical, results-driven education that makes a real difference in operational safety and
+                    efficiency.</p>
+                <p>With a global perspective and local expertise, J Aviation is uniquely positioned to address the
+                    complex challenges of modern aviation training. Our instructors bring decades of real-world
+                    experience to every program, ensuring that your team receives the most relevant and up-to-date
+                    training available. Our instructors are graduates from top universities and have extensive
+                    experience in the civil aviation sector, working within airlines and airports.</p>
+            </div>
+            <div class="about-image">
+                <img src="sobre.jpg" alt="J Aviation Training in Action" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <h2>Our Programs</h2>
+        <div class="programs">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="sms.jpg" alt="SMS Program" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>SMS & SGSO</h3>
+                    <p>Comprehensive Safety Management System training designed to enhance operational safety and meet
+                        regulatory requirements.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="avsec.jpg" alt="AVSEC Program" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>Aviation Security (AVSEC)</h3>
+                    <p>Advanced training in aviation security protocols and threat management for a secure flying
+                        environment.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="meteo.jpg" alt="Meteorology Program" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>Operational Meteorology</h3>
+                    <p>Specialized training on turbulence, windshear, and weather operational impacts for safer flight
+                        planning.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="airport.jpg" alt="Airport Operations Program" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>Airport Operations</h3>
+                    <p>Comprehensive training on airport operations and ramp coordination for efficient ground handling.
+                    </p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="emergency.jpg" alt="Emergency Response Program" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>Emergency Response</h3>
+                    <p>Critical training for airport emergency response scenarios to ensure preparedness and safety.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="logic.jpg" alt="Specific Training Requirements" loading="lazy">
+                </div>
+                <div class="program-content">
+                    <h3>Specific Training Requirements</h3>
+                    <p>We understand that aviation professionals have unique training needs that may go beyond standard
+                        courses. Our Specific Training Requirements program allows you to request customized training
+                        solutions tailored to your exact specifications.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Gallery Section -->
+    <section id="logo-gallery">
+        <h2 style="font-size: 2.5rem; margin-bottom: 40px; position: relative; display: inline-block;">Our Partners</h2>
+        <div class="gallery-container">
+            <div class="logo-container">
+                <img src="partner1.jpg" alt="Partner Logo 1" class="partner-logo" loading="lazy">
+            </div>
+            <div class="logo-container">
+                <img src="partner2.jpg" alt="Partner Logo 2" class="partner-logo" loading="lazy">
+            </div>
+            <div class="logo-container">
+                <img src="partner3.jpg" alt="Partner Logo 3" class="partner-logo" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customers Section -->
+    <section id="customers" class="section">
+        <h2>Our Customers</h2>
+        <div class="customers-grid">
+            <div class="customer-card">
+                <img src="canada.jpg" alt="Saskatoon International Airport" loading="lazy">
+                <div class="customer-overlay">
+                    <h3>Saskatoon International Airport</h3>
+                </div>
+            </div>
+            <div class="customer-card">
+                <img src="canada2.jpg" alt="Thunder Bay International Airport" loading="lazy">
+                <div class="customer-overlay">
+                    <h3>Thunder Bay International Airport</h3>
+                </div>
+            </div>
+            <div class="customer-card">
+                <img src="newyork.jpg" alt="Newark International Airport" loading="lazy">
+                <div class="customer-overlay">
+                    <h3>Newark International Airport</h3>
+                </div>
+            </div>
+            <div class="customer-card">
+                <img src="alemanha.jpg" alt="GRU - Guarulhos International Airport" loading="lazy">
+                <div class="customer-overlay">
+                    <h3>GRU - Guarulhos International Airport</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Why Invest Section -->
+        <section id="why-invest" class="section">
+            <h2>Why Invest in Training</h2>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'tab1')">Reduce Costs & Increase Efficiency</button>
+                    <button class="tab-button" onclick="openTab(event, 'tab2')">Your Crew Ready Anywhere</button>
+                    <button class="tab-button" onclick="openTab(event, 'tab3')">Smart Training: Aviation's Future</button>
+                    <button class="tab-button" onclick="openTab(event, 'tab4')">Training Without Borders</button>
+                </div>
+
+                <div id="tab1" class="tab-content active">
+                    <h3>Reduce Costs & Increase Efficiency</h3>
+                    <p>Our specialized training programs are designed to optimize operational procedures, reducing
+                        unnecessary expenses while maximizing resource utilization. By implementing best practices learned
+                        through our training, airlines and airports typically see a 15-20% increase in operational
+                        efficiency.</p>
+                    <p>Well-trained staff can identify and mitigate potential issues before they escalate into costly
+                        problems. From fuel management to maintenance procedures, our comprehensive approach addresses all
+                        aspects of aviation operations to ensure maximum cost-effectiveness without compromising safety.</p>
+                </div>
+
+                <div id="tab2" class="tab-content">
+                    <h3>Your Crew Ready Anywhere</h3>
+                    <p>With J Aviation's flexible training solutions, your crew remains certified and prepared regardless of
+                        their location. Our remote training capabilities ensure continuous professional development, even
+                        for distributed teams operating across multiple time zones and regions.</p>
+                    <p>We offer both scheduled and on-demand training options, allowing your personnel to maintain
+                        qualifications and enhance their skills without disrupting operational schedules. This approach
+                        minimizes downtime and ensures all team members have access to the same high-quality training
+                        resources.</p>
+                </div>
+
+                <div id="tab3" class="tab-content">
+                    <h3>Smart Training: Aviation's Future</h3>
+                    <p>The future of aviation lies in intelligent, adaptive training that evolves with the industry. Our
+                        forward-thinking programs incorporate the latest technologies and methodologies, preparing your team
+                        not just for today's challenges but tomorrow's aviation landscape.</p>
+                    <p>From advanced simulation technology to data-driven training assessments, we harness innovation to
+                        create more effective learning experiences. This approach develops not only technical skills but
+                        also critical thinking and decision-making abilities essential for modern aviation professionals.</p>
+                </div>
+
+                <div id="tab4" class="tab-content">
+                    <h3>Training Without Borders</h3>
+                    <p>Our global training capabilities enable your organization to implement consistent standards across
+                        all locations. Whether you operate in one country or across multiple continents, J Aviation delivers
+                        uniform, high-quality training that meets international regulations and your specific operational
+                        requirements.</p>
+                    <p>We offer training in multiple languages and adapt our programs to address regional nuances while
+                        maintaining global standards. This comprehensive approach ensures that your entire organization
+                        operates with the same level of excellence, regardless of geographic location.</p>
+                </div>
+            </div>
+
+            <!-- Added proper container for tab images -->
+            <div class="image-gallery">
+                <div class="gallery-image">
+                    <img src="t1.jpg" alt="J Aviation Training Benefits" loading="lazy">
+                </div>
+                <div class="gallery-image">
+                    <img src="t2.jpg" alt="J Aviation Training Benefits" loading="lazy">
+                </div>
+            </div>
+        </section>
+        </div>
+
+    
+    <!-- NEW SECTION: Our Difference and Platform -->
+    <section id="platform" class="section">
+        <div class="platform-container">
+            <div class="platform-content">
+                <h2>Our Difference and Platform</h2>
+                <p>At J Aviation Training, we've revolutionized the aviation training experience through our state-of-the-art interactive learning platform. Unlike traditional training methods, our platform offers a dynamic, engaging environment that adapts to individual learning styles and needs.</p>
+                <p>Our comprehensive digital ecosystem features countless hours of professionally produced video content, interactive assessments, real-world simulations, and a vast library of resources that go beyond basic training requirements. We're committed to excellence in aviation education, ensuring our students are not just compliant, but confident and competent in their roles.</p>
+            </div>
+            <div class="platform-image">
+                <img src="certificate.jpg" alt="J Aviation Training Platform" class="responsive-image">
+            </div>
+        </div>
+    </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <div class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <p style="margin-top: 20px; margin-bottom: 20px;">Or contact us directly: <a href="mailto:javiationtraining@gmail.com" style="color: #007bff; text-decoration: none;">javiationtraining@gmail.com</a> | <a href="mailto:john@javiationtraining.com" style="color: #007bff; text-decoration: none;">adm@javiationtraining.com</a></p>
+                <button type="submit" class="submit-button" id="submitButton">Send Message</button>
+                <div id="formResponse" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px; text-align: center;"></div>
+            </div>
+            </div>
+        </section>
+        <script>
+            function openTab(evt, tabName) {
+                // Declare variables
+                var i, tabcontent, tabbuttons;
+
+                // Get all elements with class="tab-content" and hide them
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tab-button" and remove the class "active"
+                tabbuttons = document.getElementsByClassName("tab-button");
+                for (i = 0; i < tabbuttons.length; i++) {
+                    tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+        </body>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 J Aviation Flight Training. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/javiationtraining" class="social-icon" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/posts/j-aviation-training_j-aviation-training-linkedin-activity-7308582999145504770-GVGi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJKU10Bz5zHAxQpYVbRjkZx_E9In0pbQrU" class="social-icon" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        <div class="founder">
+        Founder: <a href="https://www.linkedin.com/in/joaovitorpilot/" target="_blank">João Vitor</a>
+                <!-- Fix 1: WhatsApp Button with correct format -->
+                <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+                    <a href="https://wa.me/5511947911155" target="_blank" style="display: block; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                </div>
+            </a>
+        </div>
+        </div>
+
+        <script>
+        function openTab(evt, tabName) {
+            // Declare variables
+            var i, tabcontent, tabbuttons;
+
+            // Get all elements with class="tab-content" and hide them
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tab-button" and remove the class "active"
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const formResponse = document.getElementById('formResponse');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    // Desabilitar o botão para evitar múltiplos envios
+                    submitButton.disabled = true;
+
+                    // Obter valores do formulário
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+
+                    // Validação básica
+                    if (!name || !email || !subject || !message) {
+                        formResponse.style.display = 'block';
+                        formResponse.style.backgroundColor = '#f44336';
+                        formResponse.innerHTML = '<p>Please fill in all fields</p>';
+                        submitButton.disabled = false;
+                        return;
+                    }
+
+                    // Aqui você normalmente enviaria os dados para um servidor
+                    // Por enquanto, apenas simularemos uma resposta bem-sucedida
+
+                    // Mostrar mensagem de sucesso
+                    formResponse.style.display = 'block';
+                    formResponse.style.backgroundColor = '#4CAF50';
+                    formResponse.style.color = 'white';
+                    formResponse.innerHTML = '<p>Your message has been sent successfully! We will get back to you soon.</p>';
+
+                    // Resetar o formulário
+                    contactForm.reset();
+
+                    // Reativar o botão após 3 segundos
+                    setTimeout(function() {
+                        submitButton.disabled = false;
+                    }, 3000);
+
+                    // Remover a mensagem de sucesso após 5 segundos
+                    setTimeout(function() {
+                        formResponse.style.display = 'none';
+                    }, 5000);
+                });
+            }
+        });
+        </script>
